@@ -6,7 +6,7 @@ format_on_save.setup({
 		"/node_modules/",
 	},
 	formatter_by_ft = {
-		dart = formatters.lsp,
+		dart = formatters.ast_grep,
 		css = formatters.lsp,
 		html = formatters.lsp,
 		java = formatters.lsp,
