@@ -4,9 +4,9 @@ require("flutter-tools").setup {
 	},
 	decorations = {
 		statusline = {
-			app_version = false,
-			device = false,
-			project_config = false,
+			app_version = true,
+			device = true,
+			project_config = true,
 		}
 	},
 	debugger = {  -- integrate with nvim dap + install dart code debugger
@@ -21,8 +21,8 @@ require("flutter-tools").setup {
 		enabled = false,
 	},
 	closing_tags = {
-		highlight = "ErrorMsg", -- highlight for the closing tag
-		prefix = ">", -- character to use for close tag e.g. > Widget
+		highlight = "Comment", -- highlight for the closing tag
+		prefix = "// ", -- character to use for close tag e.g. > Widget
 		enabled = true -- set to false to disable
 	},
 	dev_log = {
@@ -31,8 +31,8 @@ require("flutter-tools").setup {
 		open_cmd = "tabedit", -- command to use to open the log buffer
 	},
 	dev_tools = {
-		autostart = false, -- autostart devtools server if not detected
-		auto_open_browser = false, -- Automatically opens devtools in the browser
+		autostart = true, -- autostart devtools server if not detected
+		auto_open_browser = true, -- Automatically opens devtools in the browser
 	},
 	outline = {
 		open_cmd = "30vnew", -- command to use to open the outline buffer
