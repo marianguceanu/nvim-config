@@ -52,6 +52,8 @@ return require('packer').startup(function(use)
 		'nvim-lualine/lualine.nvim',
 	}
 	use 'mfussenegger/nvim-dap'
+	use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+	use 'jay-babu/mason-nvim-dap.nvim'
 	use {
 		'nvim-tree/nvim-tree.lua',
 		requires = {
@@ -59,10 +61,18 @@ return require('packer').startup(function(use)
 		},
 	}
 	use 'mfussenegger/nvim-dap-python'
-	use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
 	use 'folke/neodev.nvim'
 	use {
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end
+	}
+	use {
+		-- Add indentation guides even on blank lines
+		'lukas-reineke/indent-blankline.nvim',
+		-- Enable `lukas-reineke/indent-blankline.nvim`
+		-- See `:help ibl`
+		main = 'ibl',
+		opts = {},
+
 	}
 end)
