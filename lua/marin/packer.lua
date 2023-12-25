@@ -48,8 +48,9 @@ return require('packer').startup(function(use)
 		},
 	}
 	use 'navarasu/onedark.nvim'
-	use { 'vim-airline/vim-airline',
-		'vim-airline/vim-airline-themes' }
+	use {
+		'nvim-lualine/lualine.nvim',
+	}
 	use 'mfussenegger/nvim-dap'
 	use {
 		'nvim-tree/nvim-tree.lua',

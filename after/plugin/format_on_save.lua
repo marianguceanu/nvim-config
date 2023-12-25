@@ -52,8 +52,9 @@ format_on_save.setup({
 			formatters.isort,
 			formatters.autopep8,
 		},
-		cs = {
-			formatters.csharpier
+		c_sharp = {
+			formatters.omnisharp,
+			formatters.csharpier,
 		},
 
 		-- Use a tempfile instead of stdin
