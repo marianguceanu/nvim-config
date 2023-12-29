@@ -9,6 +9,8 @@ require('telescope').setup {
 	},
 }
 
+pcall(require('telescope').load_extension, 'fzf')
+
 local builtin = require('telescope.builtin')
 -- Project files
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
@@ -21,6 +23,20 @@ local function telescope_live_grep_open_files()
 		grep_open_files = true,
 		prompt_title = 'Live Grep in Open Files',
 	}
+end
+vim.keymap.set('n', '<leader>/', function()
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = '[/] Fuzzily search in current buffer' })
+
+local function telescope_live_grep_open_files()
+  require('telescope.builtin').live_grep {
+    grep_open_files = true,
+    prompt_title = 'Live Grep in Open Files',
+  }
 end
 vim.keymap.set('n', '<leader>s/', telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
 vim.keymap.set('n', '<leader>ss', require('telescope.builtin').builtin, { desc = '[S]earch [S]elect Telescope' })

@@ -6,12 +6,25 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
+	use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' }
+	use 'nvim-lua/plenary.nvim'
+	-- Fuzzy Finder Algorithm which requires local dependencies to be built.
+	-- Only load if `make` is available. Make sure you have the system
+	-- requirements installed.
 	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.5',
-		-- or                            , branch = '0.1.x',
-		requires = { { 'nvim-lua/plenary.nvim' } }
+		'nvim-telescope/telescope-fzf-native.nvim',
+		-- NOTE: If you are having trouble with this installation,
+		--       refer to the README for telescope-fzf-native for more instructions.
+		build = 'make',
+		cond = function()
+			return vim.fn.executable 'make' == 1
+		end,
 	}
-	use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+	use 'nvim-treesitter/nvim-treesitter'
+	use {
+		'nvim-treesitter/nvim-treesitter-textobjects',
+		build = ':TSUpdate',
+	}
 	-- LSP installers
 	use {
 		"williamboman/mason.nvim",
@@ -35,9 +48,6 @@ return require('packer').startup(function(use)
 			{ 'L3MON4D3/LuaSnip' },
 		}
 	}
-
-	-- Format on save
-	use "elentok/format-on-save.nvim"
 
 	-- Flutter
 	use {
@@ -75,4 +85,12 @@ return require('packer').startup(function(use)
 		opts = {},
 
 	}
+	use { 'folke/which-key.nvim', opts = {} }
+	use {
+		'numToStr/Comment.nvim',
+		config = function()
+			require('Comment').setup()
+		end
+	}
+	use { "elentok/format-on-save.nvim" }
 end)
