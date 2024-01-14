@@ -57,21 +57,73 @@ dap.listeners.before.event_exited['dapui_config'] = dapui.close
 require('dap-python').setup('~/AppData/Local/Programs/Python/Python312/python.exe')
 
 -- Flutter debugger
+-- dap.adapters.dart = {
+-- 	type = "executable",
+-- 	command = "flutter",
+-- 	-- This command was introduced upstream in https://github.com/dart-lang/sdk/commit/b68ccc9a
+-- 	args = { "debug_adapter" }
+-- }
+-- dap.configurations.dart = {
+-- 	{
+-- 		name = "Launch",
+-- 		request = "launch",
+-- 		type = "dart",
+-- 		program = "${file}",
+-- 		cwd = "${workspaceFolder}",
+-- 		toolArgs = { "-d", "chrome" }, -- Note for Dart apps this is args, for Flutter apps toolArgs
+-- 	},
+-- 	{
+-- 		name = "Launch (profile)",
+-- 		request = "launch",
+-- 		type = "dart",
+-- 		flutterMode = "profile",
+-- 		program = "${file}",
+-- 		cwd = "${workspaceFolder}",
+-- 		toolArgs = { "-d", "chrome" }, -- Note for Dart apps this is args, for Flutter apps toolArgs
+-- 	},
+-- 	{
+-- 		name = "Launch (release)",
+-- 		request = "launch",
+-- 		type = "dart",
+-- 		flutterMode = "release",
+-- 		program = "${file}",
+-- 		cwd = "${workspaceFolder}",
+-- 		toolArgs = { "-d", "chrome" }, -- Note for Dart apps this is args, for Flutter apps toolArgs
+-- 	}
+-- }
+
+dap.adapters.coreclr = {
+	type = 'executable',
+	command = 'C:\\Users\\maria\\AppData\\Local\\nvim-data\\mason\\packages\\netcoredbg\\netcoredbg\\netcoredbg.exe',
+	args = { '--interpreter=vscode' }
+}
+dap.configurations.cs = {
+	{
+		type = "coreclr",
+		name = "launch - netcoredbg",
+		request = "launch",
+		program = function()
+			return vim.fn.input('Path to dll ', vim.fn.getcwd() .. '\\bin\\Debug\\', 'file')
+		end,
+	},
+}
+
 dap.adapters.dart = {
-    type = "executable",
-    command = "flutter",
-    -- This command was introduced upstream in https://github.com/dart-lang/sdk/commit/b68ccc9a
-    args = {"debug_adapter"}
-  }
-  dap.configurations.dart = {
-    {
-      type = "dart",
-      request = "launch",
-      name = "Launch Dart Program",
-      -- The nvim-dap plugin populates this variable with the filename of the current buffer
-      program = "${file}",
-      -- The nvim-dap plugin populates this variable with the editor's current working directory
-      cwd = "${workspaceFolder}",
-      toolArgs= {""}, -- Note for Dart apps this is args, for Flutter apps toolArgs
-    }
-  }
+	type = "executable",
+	command = "~/AppData/Local/nvim-data/mason/bin/dart-debug-adapter.cmd",
+	args = { "flutter" }
+}
+
+dap.configurations.dart = {
+	{
+		type = "dart",
+		request = "launch",
+		name = "Launch flutter",
+		dartSdkPath = 'C:\\flutter\\bin',
+		flutterSdkPath = "C:\\flutter\\bin",
+		program = "${workspaceFolder}/lib/main.dart",
+		cwd = "${workspaceFolder}",
+	}
+}
+-- uncomment below line if you've launch.json file already in your vscode setup
+-- require("dap.ext.vscode").load_launchjs()

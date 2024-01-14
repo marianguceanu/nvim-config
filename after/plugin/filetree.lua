@@ -21,5 +21,14 @@ require("nvim-tree").setup({
 	},
 	filters = {
 		dotfiles = false,
+		git_clean = false,
+		no_buffer = false,
+		git_ignored = false,
+		custom = {},
+		exclude = { 'node_modules' },
 	},
 })
+
+
+-- Keymaps
+vim.keymap.set('n', '<S-e>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })

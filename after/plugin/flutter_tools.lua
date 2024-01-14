@@ -13,7 +13,31 @@ require("flutter-tools").setup {
 		enabled = true,
 		run_via_dap = true, -- use dap instead of a plenary job to run flutter apps
 		exception_breakpoints = {},
+		register_configurations = function(_)
+			require("dap").adapters.dart = {
+				type = "executable",
+				command =
+				"C:\\Users\\maria\\AppData\\Local\\nvim-data\\mason\\bin\\dart-debug-adapter.cmd",
+				args = { "flutter" }
+			}
+
+			require("dap").configurations.dart = {
+				{
+					type = "dart",
+					request = "launch",
+					name = "Launch flutter",
+					dartSdkPath = 'C:\\flutter',
+					flutterSdkPath = "C:\\flutter",
+					program = "${workspaceFolder}/lib/main.dart",
+					cwd = "${workspaceFolder}",
+				}
+			}
+			-- uncomment below line if you've launch.json file already in your vscode setup
+			-- require("dap.ext.vscode").load_launchjs()
+		end,
+
 	},
+	flutter_path = "C:\\flutter\\bin\\flutter.bat",
 	flutter_lookup_cmd = nil,            -- example "dirname $(which flutter)" or "asdf where flutter"
 	root_patterns = { ".git", "pubspec.yaml" }, -- patterns to find the root of your flutter project
 	fvm = false,                         -- takes priority over path, uses <workspace>/.fvm/flutter_sdk if enabled
@@ -47,15 +71,11 @@ require("flutter-tools").setup {
 			virtual_text = true, -- show the highlight using virtual text
 			virtual_text_str = "■", -- the virtual text character to highlight
 		},
-		capabilities = function(config)
-			config.specificThingIDontWant = false
-			return config
-		end,
 		settings = {
 			showTodos = true,
 			completeFunctionCalls = true,
 			analysisExcludedFolders = { "C:\\flutter\\bin" },
-			renameFilesWithClasses = "prompt", -- "always"
+			renameFilesWithClasses = "always", -- "always"
 			enableSnippets = true,
 			updateImportsOnRename = true, -- Whether to update imports and other directives when files are renamed. Required for `FlutterRename` command.
 		}

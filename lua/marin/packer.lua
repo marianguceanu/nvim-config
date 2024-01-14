@@ -77,12 +77,9 @@ return require('packer').startup(function(use)
 		config = function() require("nvim-autopairs").setup {} end
 	}
 	use {
-		-- Add indentation guides even on blank lines
 		'lukas-reineke/indent-blankline.nvim',
-		-- Enable `lukas-reineke/indent-blankline.nvim`
-		-- See `:help ibl`
 		main = 'ibl',
-		opts = {},
+		opts = {}
 
 	}
 	use { 'folke/which-key.nvim', opts = {} }
@@ -92,5 +89,5 @@ return require('packer').startup(function(use)
 			require('Comment').setup()
 		end
 	}
-	use { "elentok/format-on-save.nvim" }
+	use { "catppuccin/nvim", as = "catppuccin" }
 end)
