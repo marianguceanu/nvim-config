@@ -85,10 +85,10 @@ _G.packer_plugins = {
     path = "C:\\Users\\maria\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  catppuccin = {
+  ["cmake-tools.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\maria\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\catppuccin",
-    url = "https://github.com/catppuccin/nvim"
+    path = "C:\\Users\\maria\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmake-tools.nvim",
+    url = "https://github.com/Civitasv/cmake-tools.nvim"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
@@ -104,6 +104,19 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\maria\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\flutter-tools.nvim",
     url = "https://github.com/akinsho/flutter-tools.nvim"
+  },
+  ["guard-collection"] = {
+    loaded = true,
+    path = "C:\\Users\\maria\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\guard-collection",
+    url = "https://github.com/nvimdev/guard-collection"
+  },
+  ["guard.nvim"] = {
+    config = { "\27LJ\2\na\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\29lsp_as_default_formatter\2\16fmt_on_save\2\nsetup\nguard\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "C:\\Users\\maria\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\guard.nvim",
+    url = "https://github.com/nvimdev/guard.nvim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
@@ -239,6 +252,13 @@ time([[Config for Comment.nvim]], false)
 time([[Conditional loading of telescope-fzf-native.nvim]], true)
   require("packer.load")({"telescope-fzf-native.nvim"}, {}, _G.packer_plugins)
 time([[Conditional loading of telescope-fzf-native.nvim]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'guard.nvim'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

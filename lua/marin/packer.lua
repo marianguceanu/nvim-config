@@ -1,10 +1,6 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 	use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' }
 	use 'nvim-lua/plenary.nvim'
@@ -36,9 +32,6 @@ return require('packer').startup(function(use)
 	use { 'VonHeikemen/lsp-zero.nvim',
 		branch = 'v3.x',
 		requires = {
-			--- Uncomment these if you want to manage LSP servers from neovim
-			-- {'williamboman/mason.nvim'},
-			-- {'williamboman/mason-lspconfig.nvim'},
 
 			-- LSP Support
 			{ 'neovim/nvim-lspconfig' },
@@ -58,9 +51,7 @@ return require('packer').startup(function(use)
 		},
 	}
 	use 'navarasu/onedark.nvim'
-	use {
-		'nvim-lualine/lualine.nvim',
-	}
+	use 'nvim-lualine/lualine.nvim'
 	use 'mfussenegger/nvim-dap'
 	use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
 	use 'jay-babu/mason-nvim-dap.nvim'
@@ -89,5 +80,18 @@ return require('packer').startup(function(use)
 			require('Comment').setup()
 		end
 	}
-	use { "catppuccin/nvim", as = "catppuccin" }
+	use {
+		"nvimdev/guard.nvim",
+		event = "BufReadPre",
+		config = function()
+			require("guard").setup({
+				-- the only options for the setup function
+				fmt_on_save = true,
+				-- Use lsp if no formatter was defined for this filetype
+				lsp_as_default_formatter = true,
+			})
+		end,
+	}
+	use 'nvimdev/guard-collection'
+	use 'Civitasv/cmake-tools.nvim'
 end)

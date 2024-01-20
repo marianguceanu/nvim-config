@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 local dap = require 'dap'
 local dapui = require 'dapui'
 

@@ -11,7 +11,7 @@ require('onedark').setup {
 		variables = 'bold'
 	},
 	lualine = {
-		transparent = true, -- lualine center bar transparency
+		transparent = false, -- lualine center bar transparency
 	},
 }
 require('onedark').load()
