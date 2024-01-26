@@ -49,6 +49,7 @@ return require('packer').startup(function(use)
 			'nvim-lua/plenary.nvim',
 			'stevearc/dressing.nvim', -- optional for vim.ui.select
 		},
+		config = true
 	}
 	use 'navarasu/onedark.nvim'
 	use 'nvim-lualine/lualine.nvim'
@@ -80,18 +81,4 @@ return require('packer').startup(function(use)
 			require('Comment').setup()
 		end
 	}
-	use {
-		"nvimdev/guard.nvim",
-		event = "BufReadPre",
-		config = function()
-			require("guard").setup({
-				-- the only options for the setup function
-				fmt_on_save = true,
-				-- Use lsp if no formatter was defined for this filetype
-				lsp_as_default_formatter = true,
-			})
-		end,
-	}
-	use 'nvimdev/guard-collection'
-	use 'Civitasv/cmake-tools.nvim'
 end)

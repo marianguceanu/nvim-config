@@ -26,9 +26,9 @@ require("flutter-tools").setup {
 					type = "dart",
 					request = "launch",
 					name = "Launch flutter",
-					dartSdkPath = 'C:\\flutter',
+					dartSdkPath = 'C:\\flutter\\bin\\cache\\dart-sdk',
 					flutterSdkPath = "C:\\flutter",
-					program = "${workspaceFolder}/lib/main.dart",
+					program = "${workspaceFolder}\\lib\\main.dart",
 					cwd = "${workspaceFolder}",
 				}
 			}

@@ -37,7 +37,6 @@ end)
 
 lsp_zero.format_on_save({
 	format_opts = {
-		async = true,
 		timeout_ms = 10000,
 	},
 	servers = {
@@ -45,6 +44,5 @@ lsp_zero.format_on_save({
 		['omnisharp'] = { 'cs' },
 		['pyright'] = { 'python' },
 		['lua_ls'] = { 'lua' },
-		['dartls'] = { 'dart' }
 	}
 })
