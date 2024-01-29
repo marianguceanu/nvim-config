@@ -64,21 +64,11 @@ return require('packer').startup(function(use)
 	}
 	use 'mfussenegger/nvim-dap-python'
 	use 'folke/neodev.nvim'
-	use {
-		"windwp/nvim-autopairs",
-		config = function() require("nvim-autopairs").setup {} end
-	}
+	use "windwp/nvim-autopairs"
 	use {
 		'lukas-reineke/indent-blankline.nvim',
 		main = 'ibl',
-		opts = {}
-
 	}
 	use { 'folke/which-key.nvim', opts = {} }
-	use {
-		'numToStr/Comment.nvim',
-		config = function()
-			require('Comment').setup()
-		end
-	}
+	use 'numToStr/Comment.nvim'
 end)
