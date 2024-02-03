@@ -1,5 +1,5 @@
-require("marin.remap")
 -- Nice number showing
+
 vim.cmd("set nu")
 vim.cmd("set relativenumber")
 
@@ -16,3 +16,6 @@ vim.o.undofile = true
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
+
+vim.cmd [[autocmd BufEnter *.py set ai sw=4 ts=4 sta et fo=croql]]
+vim.cmd [[autocmd BufEnter *.dart set ai sw=2 ts=2]]
