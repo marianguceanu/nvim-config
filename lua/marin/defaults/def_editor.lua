@@ -19,3 +19,7 @@ vim.o.smartcase = true
 
 vim.cmd [[autocmd BufEnter *.py set ai sw=4 ts=4 sta et fo=croql]]
 vim.cmd [[autocmd BufEnter *.dart set ai sw=2 ts=2]]
+vim.cmd [[autocmd BufEnter *.js set ai sw=2 ts=2]]
+vim.cmd [[autocmd BufEnter *.jsx set ai sw=2 ts=2]]
+vim.cmd [[autocmd BufEnter *.ts set ai sw=2 ts=2]]
+vim.cmd [[autocmd BufEnter *.tsx set ai sw=2 ts=2]]
