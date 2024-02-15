@@ -10,18 +10,39 @@ require("flutter-tools").setup {
 			project_config = true,
 		}
 	},
-	debugger = {      -- integrate with nvim dap + install dart code debugger
+	debugger = {   -- integrate with nvim dap + install dart code debugger
 		enabled = false,
 		run_via_dap = false, -- use dap instead of a plenary job to run flutter apps
 		exception_breakpoints = {},
 		-- register_configurations = function(_)
+		-- 	local dap = require("dap")
+		-- 	dap.adapters.dart = {
+		-- 		type = "executable",
+		-- 		command = "C:\\flutter\\bin\\flutter.bat",
+		-- 		args = { "debug_adapter" }
+		-- 	}
+		--
+		-- 	dap.configurations.dart = {
+		-- 		{
+		-- 			type = "dart",
+		-- 			request = "launch",
+		-- 			name = "Launch Flutter Program",
+		-- 			-- dartSdkPath = 'C:\\flutter\\bin\\cache\\dart-sdk',
+		-- 			-- flutterSdkPath = "C:\\flutter\\bin",
+		-- 			program = "${file}",
+		-- 			-- The nvim-dap plugin populates this variable with the editor's current working directory
+		-- 			cwd = "${workspaceFolder}",
+		-- 			-- This gets forwarded to the Flutter CLI tool, substitute `linux` for whatever device you wish to launch
+		-- 			toolArgs = { "-d", "android-x64" }
+		-- 		}
+		-- 	}
 		-- end,
 
 	},
 	flutter_path = "C:\\flutter\\bin\\flutter.bat",
-	flutter_lookup_cmd = nil,               -- example "dirname $(which flutter)" or "asdf where flutter"
+	flutter_lookup_cmd = nil,            -- example "dirname $(which flutter)" or "asdf where flutter"
 	root_patterns = { ".git", "pubspec.yaml" }, -- patterns to find the root of your flutter project
-	fvm = false,                            -- takes priority over path, uses <workspace>/.fvm/flutter_sdk if enabled
+	fvm = false,                         -- takes priority over path, uses <workspace>/.fvm/flutter_sdk if enabled
 	widget_guides = {
 		enabled = true,
 	},

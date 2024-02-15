@@ -34,20 +34,3 @@ dapui.setup {
 	},
 }
 require('dap-python').setup('~/AppData/Local/Programs/Python/Python312/python.exe')
--- dap.adapters.dart = {
--- 	type = "executable",
--- 	command = "~/AppData/Local/nvim-data/mason/bin/dart-debug-adapter.cmd",
--- 	args = { "flutter" }
--- }
-
--- dap.configurations.dart = {
--- 	{
--- 		type = "dart",
--- 		request = "launch",
--- 		name = "Launch flutter",
--- 		dartSdkPath = 'C:\\flutter\\bin',
--- 		flutterSdkPath = "C:\\flutter\\bin",
--- 		program = "${workspaceFolder}/lib/main.dart",
--- 		cwd = "${workspaceFolder}",
--- 	}
--- }

@@ -16,18 +16,19 @@ lsp_zero.on_attach(function(client, bufnr)
 	vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
-lsp_zero.format_on_save({
-	format_opts = {
-		timeout_ms = 10000,
-	},
-	servers = {
-		['tsserver'] = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
-		['omnisharp'] = { 'cs' },
-		['pyright'] = { 'python' },
-		['lua_ls'] = { 'lua' },
-		['dartls'] = { 'dart' }
-	}
-})
+-- lsp_zero.format_on_save({
+-- 	format_opts = {
+-- 		timeout_ms = 10000,
+-- 	},
+-- 	servers = {
+-- 		['tsserver'] = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
+-- 		['omnisharp'] = { 'cs' },
+-- 		['pyright'] = { 'python' },
+-- 		['lua_ls'] = { 'lua' },
+-- 		['dartls'] = { 'dart' },
+-- 		['clangd'] = { 'c', 'cpp' }
+-- 	}
+-- })
 require('mason-lspconfig').setup({
 	handlers = {
 		lsp_zero.default_setup,
