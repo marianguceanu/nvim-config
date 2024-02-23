@@ -8,6 +8,7 @@ require("conform").setup({
 		json = { "prettier" },
 		python = { "isort", "pylint" },
 		lua = { "stylua" },
+		cs = { "csharpier" },
 	},
 
 	format_on_save = {
