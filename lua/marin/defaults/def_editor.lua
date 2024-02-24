@@ -17,6 +17,9 @@ vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- Global statusline
+vim.opt.laststatus = 3
+
 vim.cmd([[autocmd BufEnter *.py set ai sw=4 ts=4 sta et fo=croql]])
 vim.cmd([[autocmd BufEnter *.dart set ai sw=2 ts=2]])
 vim.cmd([[autocmd BufEnter *.js set ai sw=2 ts=2]])

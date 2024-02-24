@@ -9,6 +9,7 @@ require("conform").setup({
 		python = { "isort", "pylint" },
 		lua = { "stylua" },
 		cs = { "csharpier" },
+		csharp = { "csharpier" },
 	},
 
 	format_on_save = {
