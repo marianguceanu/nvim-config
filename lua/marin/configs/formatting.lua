@@ -6,15 +6,13 @@ require("conform").setup({
 		typescriptreact = { "prettier" },
 		css = { "prettier" },
 		json = { "prettier" },
-		python = { "isort", "pylint" },
+		python = { "isort", "pylint", "black" },
 		lua = { "stylua" },
-		cs = { "csharpier" },
-		csharp = { "csharpier" },
 	},
 
 	format_on_save = {
 		lsp_fallback = true,
-		async = false,
-		timeout_ms = 1000,
+		async = true,
+		timeout_ms = 2000,
 	},
 })
