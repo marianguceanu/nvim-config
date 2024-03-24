@@ -38,7 +38,7 @@ require("flutter-tools").setup({
 		-- 	}
 		-- end,
 	},
-	flutter_path = "C:\\dev\\flutter\\bin\\flutter.bat",
+	flutter_path = "/home/marianguceanu/development/flutter/bin/flutter",
 	flutter_lookup_cmd = nil, -- example "dirname $(which flutter)" or "asdf where flutter"
 	root_patterns = { ".git", "pubspec.yaml" }, -- patterns to find the root of your flutter project
 	fvm = false, -- takes priority over path, uses <workspace>/.fvm/flutter_sdk if enabled
@@ -75,7 +75,7 @@ require("flutter-tools").setup({
 		settings = {
 			showTodos = true,
 			completeFunctionCalls = true,
-			analysisExcludedFolders = { "C:\\flutter\\bin" },
+			analysisExcludedFolders = { "/home/marianguceanu/development/flutter/bin/" },
 			renameFilesWithClasses = "always", -- "always"
 			enableSnippets = true,
 			updateImportsOnRename = true, -- Whether to update imports and other directives when files are renamed. Required for `FlutterRename` command.

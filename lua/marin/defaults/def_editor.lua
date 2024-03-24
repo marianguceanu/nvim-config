@@ -1,5 +1,4 @@
 -- Nice number showing
-
 vim.cmd("set nu")
 vim.cmd("set relativenumber")
 
@@ -17,13 +16,8 @@ vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
--- Key map to show the entire error
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>se",
-	':lua vim.diagnostic.open_float(0, { scope = "line" })<CR>',
-	{ noremap = true, silent = true }
-)
+-- Block cursor all the time
+vim.cmd([[set guicursor=n-v-c-i:block]])
 
 vim.cmd([[autocmd BufEnter *.py set ai sw=4 ts=4 sta et fo=croql]])
 vim.cmd([[autocmd BufEnter *.dart set ai sw=2 ts=2]])
