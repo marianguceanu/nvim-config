@@ -8,8 +8,8 @@ require("onedark").setup({
 
 	code_style = {
 		comments = "italic",
-		keywords = "none",
-		functions = "none",
+		keywords = "italic",
+		functions = "bold",
 		strings = "none",
 		variables = "none",
 	},

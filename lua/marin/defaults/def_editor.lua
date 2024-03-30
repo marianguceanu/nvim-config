@@ -16,6 +16,15 @@ vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- Code folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldcolumn = "0"
+vim.opt.foldtext = ""
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 5
+vim.opt.foldnestmax = 4
+
 -- Block cursor all the time
 vim.cmd([[set guicursor=n-v-c-i:block]])
 
@@ -28,3 +37,4 @@ vim.cmd([[autocmd BufEnter *.tsx set ai sw=2 ts=2]])
 vim.cmd([[autocmd BufEnter *.css set ai sw=2 ts=2]])
 vim.cmd([[autocmd BufEnter *.json set ai sw=2 ts=2]])
 vim.cmd([[autocmd BufEnter *.cs set ai sw=4 ts=4]])
+vim.cmd([[autocmd BufEnter *.java set ai sw=4 ts=4]])
