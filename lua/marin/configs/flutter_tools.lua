@@ -14,29 +14,31 @@ require("flutter-tools").setup({
 		enabled = false,
 		run_via_dap = false, -- use dap instead of a plenary job to run flutter apps
 		exception_breakpoints = {},
-		-- register_configurations = function(_)
-		-- 	local dap = require("dap")
-		-- 	dap.adapters.dart = {
-		-- 		type = "executable",
-		-- 		command = "C:\\flutter\\bin\\flutter.bat",
-		-- 		args = { "debug_adapter" }
-		-- 	}
-		--
-		-- 	dap.configurations.dart = {
-		-- 		{
-		-- 			type = "dart",
-		-- 			request = "launch",
-		-- 			name = "Launch Flutter Program",
-		-- 			-- dartSdkPath = 'C:\\flutter\\bin\\cache\\dart-sdk',
-		-- 			-- flutterSdkPath = "C:\\flutter\\bin",
-		-- 			program = "${file}",
-		-- 			-- The nvim-dap plugin populates this variable with the editor's current working directory
-		-- 			cwd = "${workspaceFolder}",
-		-- 			-- This gets forwarded to the Flutter CLI tool, substitute `linux` for whatever device you wish to launch
-		-- 			toolArgs = { "-d", "android-x64" }
-		-- 		}
-		-- 	}
-		-- end,
+		register_configurations = function(_)
+			-- require("dap").configurations.dart = {}
+			-- require("dap.ext.vscode").load_launchjs()
+			-- local dap = require("dap")
+			-- dap.adapters.dart = {
+			-- 	type = "executable",
+			-- 	command = "/home/marianguceanu/development/flutter/bin/flutter",
+			-- 	args = { "debug_adapter" },
+			-- }
+			--
+			-- dap.configurations.dart = {
+			-- 	{
+			-- 		type = "dart",
+			-- 		request = "launch",
+			-- 		name = "Launch Flutter Program",
+			-- 		-- dartSdkPath = 'C:\\flutter\\bin\\cache\\dart-sdk',
+			-- 		-- flutterSdkPath = "C:\\flutter\\bin",
+			-- 		program = "${file}",
+			-- 		-- The nvim-dap plugin populates this variable with the editor's current working directory
+			-- 		cwd = "${workspaceFolder}",
+			-- 		-- This gets forwarded to the Flutter CLI tool, substitute `linux` for whatever device you wish to launch
+			-- 		-- toolArgs = { "-d", "android-x64" },
+			-- 	},
+			-- }
+		end,
 	},
 	flutter_path = "/home/marianguceanu/development/flutter/bin/flutter",
 	flutter_lookup_cmd = nil, -- example "dirname $(which flutter)" or "asdf where flutter"
