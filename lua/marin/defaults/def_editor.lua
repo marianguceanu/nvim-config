@@ -4,7 +4,6 @@ vim.cmd("set relativenumber")
 
 -- Always show at least 15 lines above/below cursor
 vim.cmd("set scrolloff=15")
--- vim.cmd("set guicursor=n-v-c-i:block")
 
 -- No highlight on search
 vim.opt.hlsearch = false
@@ -24,6 +23,7 @@ vim.opt.foldtext = ""
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 5
 vim.opt.foldnestmax = 4
+vim.o.termguicolors = true
 
 -- Block cursor all the time
 vim.cmd([[set guicursor=n-v-c-i:block]])

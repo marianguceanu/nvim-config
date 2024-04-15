@@ -3,7 +3,7 @@ require("lualine").setup({
 	options = {
 		icons_enabled = true,
 		theme = "auto",
-		component_separators = { left = "|", right = "|" },
+		component_separators = { left = "󰿟", right = "|" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
 			statusline = {},
@@ -20,7 +20,7 @@ require("lualine").setup({
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { "branch", "diff" },
+		lualine_b = { { "branch", icon = { " ", color = { fg = "pink" } } }, "diff" },
 		lualine_c = { "filename", "diagnostics" },
 		lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_y = { "progress", "location" },
