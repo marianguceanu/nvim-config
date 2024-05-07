@@ -1,5 +1,5 @@
 require("flutter-tools").setup({
-	-- All the paths listed below must be changed for your respective OS
+
 	ui = {
 		border = "rounded",
 	},
@@ -10,77 +10,53 @@ require("flutter-tools").setup({
 			project_config = true,
 		},
 	},
-	debugger = { -- integrate with nvim dap + install dart code debugger
+	debugger = {
 		enabled = false,
-		run_via_dap = false, -- use dap instead of a plenary job to run flutter apps
+		run_via_dap = false,
 		exception_breakpoints = {},
-		register_configurations = function(_)
-			-- require("dap").configurations.dart = {}
-			-- require("dap.ext.vscode").load_launchjs()
-			-- local dap = require("dap")
-			-- dap.adapters.dart = {
-			-- 	type = "executable",
-			-- 	command = "/home/marianguceanu/development/flutter/bin/flutter",
-			-- 	args = { "debug_adapter" },
-			-- }
-			--
-			-- dap.configurations.dart = {
-			-- 	{
-			-- 		type = "dart",
-			-- 		request = "launch",
-			-- 		name = "Launch Flutter Program",
-			-- 		-- dartSdkPath = 'C:\\flutter\\bin\\cache\\dart-sdk',
-			-- 		-- flutterSdkPath = "C:\\flutter\\bin",
-			-- 		program = "${file}",
-			-- 		-- The nvim-dap plugin populates this variable with the editor's current working directory
-			-- 		cwd = "${workspaceFolder}",
-			-- 		-- This gets forwarded to the Flutter CLI tool, substitute `linux` for whatever device you wish to launch
-			-- 		-- toolArgs = { "-d", "android-x64" },
-			-- 	},
-			-- }
-		end,
+		register_configurations = function(_) end,
 	},
 	flutter_path = "/home/marianguceanu/development/flutter/bin/flutter",
-	flutter_lookup_cmd = nil, -- example "dirname $(which flutter)" or "asdf where flutter"
-	root_patterns = { ".git", "pubspec.yaml" }, -- patterns to find the root of your flutter project
-	fvm = false, -- takes priority over path, uses <workspace>/.fvm/flutter_sdk if enabled
+	flutter_lookup_cmd = nil,
+	root_patterns = { ".git", "pubspec.yaml" },
+	fvm = false,
 	widget_guides = {
-		enabled = true,
+		enabled = false,
 	},
 	closing_tags = {
-		highlight = "Comment", -- highlight for the closing tag
-		prefix = "// ", -- character to use for close tag e.g. > Widget
-		enabled = true, -- set to false to disable
+		highlight = "Comment",
+		prefix = "// ",
+		enabled = true,
 	},
 	dev_log = {
 		enabled = true,
-		notify_errors = false, -- if there is an error whilst running then notify the user
-		open_cmd = "tabedit", -- command to use to open the log buffer
+		notify_errors = false,
+		open_cmd = "tabedit",
 	},
 	dev_tools = {
-		autostart = false, -- autostart devtools server if not detected
-		auto_open_browser = false, -- Automatically opens devtools in the browser
+		autostart = false,
+		auto_open_browser = false,
 	},
 	outline = {
-		open_cmd = "30vnew", -- command to use to open the outline buffer
-		auto_open = false, -- if true this will open the outline automatically when it is first populated
+		open_cmd = "30vnew",
+		auto_open = false,
 	},
 	lsp = {
-		color = { -- show the derived colours for dart variables
-			enabled = true, -- whether or not to highlight color variables at all, only supported on flutter >= 2.10
-			background = false, -- highlight the background
-			background_color = nil, -- required, when background is transparent (i.e. background_color = { r = 19, g = 17, b = 24},)
-			foreground = false, -- highlight the foreground
-			virtual_text = true, -- show the highlight using virtual text
-			virtual_text_str = "■", -- the virtual text character to highlight
+		color = {
+			enabled = true,
+			background = false,
+			background_color = nil,
+			foreground = false,
+			virtual_text = true,
+			virtual_text_str = "■",
 		},
 		settings = {
 			showTodos = true,
 			completeFunctionCalls = true,
 			analysisExcludedFolders = { "/home/marianguceanu/development/flutter/bin/" },
-			renameFilesWithClasses = "always", -- "always"
+			renameFilesWithClasses = "always",
 			enableSnippets = true,
-			updateImportsOnRename = true, -- Whether to update imports and other directives when files are renamed. Required for `FlutterRename` command.
+			updateImportsOnRename = true,
 		},
 	},
 })

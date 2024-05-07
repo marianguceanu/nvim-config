@@ -26,8 +26,15 @@ vim.opt.foldnestmax = 4
 vim.o.termguicolors = true
 
 -- Block cursor all the time
-vim.cmd([[set guicursor=n-v-c-i:block]])
+vim.cmd([[set guicursor=i:block]])
 
+-- Highlight on yank
+vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=200})]])
+
+-- No line tildes
+vim.opt.fillchars = { eob = " " }
+
+-- Visual formatting for some filetypes
 vim.cmd([[autocmd BufEnter *.py set ai sw=4 ts=4 sta et fo=croql]])
 vim.cmd([[autocmd BufEnter *.dart set ai sw=2 ts=2]])
 vim.cmd([[autocmd BufEnter *.js set ai sw=2 ts=2]])
