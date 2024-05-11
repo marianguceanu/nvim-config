@@ -9,11 +9,14 @@ end
 
 local function dark_colorings()
 	vim.api.nvim_set_hl(0, "Comment", { italic = true, fg = "grey" })
-	vim.api.nvim_set_hl(0, "Function", { bold = true, fg = "#73c5f5" })
-	vim.api.nvim_set_hl(0, "Keyword", { bold = true, fg = "#aebaf5" })
+	vim.api.nvim_set_hl(0, "Function", { bold = true, fg = "#9adde3" })
+	vim.api.nvim_set_hl(0, "Keyword", { bold = true, fg = "NvimLightRed" })
 	vim.api.nvim_set_hl(0, "MatchParen", { fg = "red" })
 	vim.api.nvim_set_hl(0, "@variable", { fg = "cyan" })
 	vim.api.nvim_set_hl(0, "@type.builtin", { fg = "#a9d941" })
+	vim.api.nvim_set_hl(0, "Identifier", { fg = "#3d87b8" })
+	vim.api.nvim_set_hl(0, "Constant", { fg = "#f08b5b" })
+	vim.api.nvim_set_hl(0, "Type", { fg = "#f28fd8" })
 end
 
 local function line_numbers()
