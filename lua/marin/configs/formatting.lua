@@ -8,6 +8,7 @@ require("conform").setup({
 		json = { "prettier" },
 		python = { "isort", "pylint", "black" },
 		lua = { "stylua" },
+		go = { "gotests", "goimports", "golines", "goimports-reviser" },
 	},
 
 	format_on_save = {

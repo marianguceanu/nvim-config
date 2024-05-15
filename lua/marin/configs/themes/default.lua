@@ -25,12 +25,17 @@ local function line_numbers()
 	vim.cmd.highlight("LineNrBelow guifg=grey")
 end
 
+local function file_tree()
+	vim.cmd.highlight("NvimTreeNormal guibg=#0d0d0d")
+end
+
 local function dark()
 	vim.cmd.colorscheme("darkblue")
 	vim.cmd.colorscheme("default")
 	dark_colorings()
 	diagnostics()
 	line_numbers()
+	-- file_tree()
 end
 
 local function light()
