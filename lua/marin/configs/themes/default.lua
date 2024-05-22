@@ -8,15 +8,15 @@ local function diagnostics()
 end
 
 local function dark_colorings()
-	vim.api.nvim_set_hl(0, "Comment", { italic = true, fg = "grey" })
-	vim.api.nvim_set_hl(0, "Function", { bold = true, fg = "#9adde3" })
-	vim.api.nvim_set_hl(0, "Keyword", { bold = true, fg = "NvimLightRed" })
 	vim.api.nvim_set_hl(0, "MatchParen", { fg = "red" })
-	vim.api.nvim_set_hl(0, "@variable", { fg = "cyan" })
-	vim.api.nvim_set_hl(0, "@type.builtin", { fg = "#a9d941" })
-	vim.api.nvim_set_hl(0, "Identifier", { fg = "#3d87b8" })
-	vim.api.nvim_set_hl(0, "Constant", { fg = "#f08b5b" })
-	vim.api.nvim_set_hl(0, "Type", { fg = "#f28fd8" })
+	vim.api.nvim_set_hl(0, "Comment", { italic = true, fg = "grey" })
+	-- vim.api.nvim_set_hl(0, "Function", { bold = true, fg = "#9adde3" })
+	-- vim.api.nvim_set_hl(0, "Keyword", { bold = true, fg = "NvimLightRed" })
+	-- vim.api.nvim_set_hl(0, "@variable", { fg = "cyan" })
+	-- vim.api.nvim_set_hl(0, "@type.builtin", { fg = "#a9d941" })
+	-- vim.api.nvim_set_hl(0, "Identifier", { fg = "#3d87b8" })
+	-- vim.api.nvim_set_hl(0, "Constant", { fg = "#f08b5b" })
+	-- vim.api.nvim_set_hl(0, "Type", { fg = "#f28fd8" })
 end
 
 local function line_numbers()
@@ -25,8 +25,11 @@ local function line_numbers()
 	vim.cmd.highlight("LineNrBelow guifg=grey")
 end
 
-local function file_tree()
-	vim.cmd.highlight("NvimTreeNormal guibg=#0d0d0d")
+local function transparency()
+	vim.cmd.highlight("Normal guibg=none")
+	vim.cmd.highlight("NonText guibg=none")
+	vim.cmd.highlight("Normal ctermbg=none")
+	vim.cmd.highlight("NonText ctermbg=none")
 end
 
 local function dark()
@@ -35,7 +38,7 @@ local function dark()
 	dark_colorings()
 	diagnostics()
 	line_numbers()
-	-- file_tree()
+	transparency()
 end
 
 local function light()
