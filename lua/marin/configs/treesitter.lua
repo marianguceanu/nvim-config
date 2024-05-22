@@ -1,5 +1,5 @@
 vim.defer_fn(function()
-	require("nvim-treesitter.configs").setup({
+	require("nvim-ts-autotag").setup({
 		-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
 		ensure_installed = {
 			"css",
