@@ -1,5 +1,5 @@
 vim.defer_fn(function()
-	require("nvim-ts-autotag").setup({
+	require("nvim-treesitter.configs").setup({
 		-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
 		ensure_installed = {
 			"css",
@@ -23,10 +23,7 @@ vim.defer_fn(function()
 			"java",
 			"tsx",
 		},
-		auto_install = true,
-		autotag = {
-			enable = true,
-		},
+		auto_install = false,
 
 		highlight = { enable = true },
 		indent = { enable = true },

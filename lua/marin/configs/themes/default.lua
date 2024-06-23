@@ -38,6 +38,8 @@ local function dark()
 	dark_colorings()
 	diagnostics()
 	line_numbers()
+	-- vim.cmd.highlight("Normal guibg=#24262b")
+	-- vim.cmd.highlight("NonText guibg=#24262b")
 	transparency()
 end
 
@@ -48,6 +50,7 @@ local function light()
 	vim.api.nvim_set_hl(0, "Function", { bold = true })
 	diagnostics()
 	line_numbers()
+	-- transparency()
 end
 
 function Default()
@@ -60,3 +63,10 @@ function Default()
 		light()
 	end, opts)
 end
+
+-- local function transparency()
+-- 	vim.cmd.highlight("Normal guibg=none")
+-- 	vim.cmd.highlight("NonText guibg=none")
+-- 	vim.cmd.highlight("Normal ctermbg=none")
+-- 	vim.cmd.highlight("NonText ctermbg=none")
+-- end

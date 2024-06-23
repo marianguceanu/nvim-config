@@ -2,7 +2,7 @@
 vim.cmd("set nu")
 vim.cmd("set relativenumber")
 
--- Always show at least 15 lines above/below cursor
+-- Always show at least 10 lines above/below cursor
 vim.cmd("set scrolloff=10")
 
 -- No highlight on search
@@ -30,6 +30,9 @@ vim.cmd([[set guicursor=i:block]])
 
 -- Highlight on yank
 vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=200})]])
+
+-- Disable line wrap
+vim.opt.wrap = false
 
 -- No line tildes
 vim.opt.fillchars = { eob = " " }
