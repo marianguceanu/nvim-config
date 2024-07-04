@@ -3,7 +3,7 @@ vim.cmd("set nu")
 vim.cmd("set relativenumber")
 
 -- Always show at least 10 lines above/below cursor
-vim.cmd("set scrolloff=10")
+vim.cmd("set scrolloff=50")
 
 -- No highlight on search
 vim.opt.hlsearch = false

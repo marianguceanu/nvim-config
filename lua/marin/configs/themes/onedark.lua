@@ -1,3 +1,5 @@
+require("marin.configs.themes.customs")
+
 function OneDark()
 	require("onedark").setup({
 		-- Main options --
@@ -23,4 +25,7 @@ function OneDark()
 	})
 
 	require("onedark").load()
+	ComplementaryColoring()
+	Diagnostics()
+	LineNumbers()
 end
