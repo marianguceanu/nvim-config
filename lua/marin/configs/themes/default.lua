@@ -6,8 +6,6 @@ local function dark()
 	vim.cmd.colorscheme("default")
 	ComplementaryColoring()
 	Diagnostics()
-	LineNumbers()
-	-- Transparency()
 end
 
 local function light()

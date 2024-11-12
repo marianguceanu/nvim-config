@@ -22,4 +22,4 @@ local function setup(theme)
 	end
 end
 
-setup("onedark")
+setup("default")
