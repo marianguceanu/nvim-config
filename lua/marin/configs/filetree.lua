@@ -47,6 +47,7 @@ require("oil").setup({
 	-- Note that the cleanup process only starts when none of the oil buffers are currently displayed
 	cleanup_delay_ms = 2000,
 	lsp_file_methods = {
+		enabled = true,
 		-- Time to wait for LSP file operations to complete before skipping
 		timeout_ms = 1000,
 		-- Set to true to autosave buffers that are updated with LSP willRenameFiles
@@ -57,7 +58,7 @@ require("oil").setup({
 	-- Set to `false` to disable, or "name" to keep it on the file names
 	constrain_cursor = "editable",
 	-- Set to true to watch the filesystem for changes and reload oil
-	experimental_watch_for_changes = false,
+	experimental_watch_for_changes = true,
 	-- Keymaps in oil buffer. Can be any value that `vim.keymap.set` accepts OR a table of keymap
 	-- options with a `callback` (e.g. { callback = function() ... end, desc = "", mode = "n" })
 	-- Additionally, if it is a string that matches "actions.<name>",

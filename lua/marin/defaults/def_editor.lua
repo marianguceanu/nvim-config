@@ -1,18 +1,15 @@
 -- Nice number showing
 vim.cmd("set nu")
 vim.cmd("set relativenumber")
-vim.keymap.set("n", "<leader>bl", function()
-	vim.cmd("BlamerToggle")
-end, opts)
-
--- Always show at least 10 lines above/below cursor
 vim.cmd("set scrolloff=50")
 
 -- No highlight on search
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+
 -- Save undo history
 vim.o.undofile = true
+
 
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true
@@ -37,19 +34,5 @@ vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearc
 -- Disable line wrap
 vim.opt.wrap = false
 
--- No line tildes
--- vim.opt.fillchars = { eob = " " }
-
--- Visual formatting for some filetypes
-vim.cmd([[autocmd BufEnter *.py set ai sw=4 ts=4 sta et fo=croql]])
-vim.cmd([[autocmd BufEnter *.dart set ai sw=2 ts=2]])
--- vim.cmd([[autocmd BufEnter *.js set ai sw=2 ts=2]])
--- vim.cmd([[autocmd BufEnter *.jsx set ai sw=2 ts=2]])
--- vim.cmd([[autocmd BufEnter *.ts set ai sw=2 ts=2]])
--- vim.cmd([[autocmd BufEnter *.tsx set ai sw=2 ts=2]])
-vim.cmd([[autocmd BufEnter *.css set ai sw=2 ts=2]])
-vim.cmd([[autocmd BufEnter *.json set ai sw=2 ts=2]])
-vim.cmd([[autocmd BufEnter *.cs set ai sw=4 ts=4]])
-vim.cmd([[autocmd BufEnter *.java set ai sw=4 ts=4]])
--- vim.cmd([[set listchars=tab:󰇙\ ]])
--- vim.cmd([[set list]])
+vim.keymap.set('n', '<C-w>.', '5<C-w>>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-w>,', '5<C-w><', { noremap = true, silent = true })

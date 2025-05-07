@@ -1,13 +1,10 @@
-require("marin.configs.themes.customs")
-
 function OneDark()
-	require("onedark").setup({
-		-- Main options --
-		style = "dark", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-		transparent = false, -- Show/hide background
-		term_colors = true, -- Change terminal color as per the selected theme style
-		ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
-		cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
+	local theme_opts = {
+		style = "dark", -- 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+		transparent = false,
+		term_colors = true,
+		ending_tildes = false,
+		cmp_itemkind_reverse = false,
 
 		code_style = {
 			comments = "italic",
@@ -16,13 +13,26 @@ function OneDark()
 			strings = "none",
 			variables = "none",
 		},
-		-- Plugins Config --
 		diagnostics = {
-			darker = true, -- darker colors for diagnostic
-			undercurl = true, -- use undercurl instead of underline for diagnostics
-			background = true, -- use background color for virtual text
+			darker = true,
+			undercurl = true,
+			background = true,
 		},
-	})
+	}
+	local function theme_setup_load()
+		require("onedark").setup(theme_opts)
+		require("onedark").load()
+	end
+	theme_setup_load()
 
-	require("onedark").load()
+
+	vim.keymap.set("n", "<leader>td", function()
+		theme_opts.style = "dark"
+		theme_setup_load()
+	end, opts)
+
+	vim.keymap.set("n", "<leader>tl", function()
+		theme_opts.style = "light"
+		theme_setup_load()
+	end, opts)
 end

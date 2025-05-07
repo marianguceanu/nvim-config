@@ -23,4 +23,9 @@ end
 function ComplementaryColoring()
 	vim.cmd.highlight("MatchParen guifg=red")
 	vim.cmd.highlight("Comment gui=italic guifg=grey")
+	-- vim.api.nvim_set_hl(0, "Function", { fg = "cyan" })
+	-- vim.api.nvim_set_hl(0, "Keyword", { bold = true, fg = "#ffa2a2" })
+	-- vim.api.nvim_set_hl(0, "@variable", { fg = "white" })
+	-- vim.api.nvim_set_hl(0, "@type.builtin", { fg = "orange" })
+	-- vim.api.nvim_set_hl(0, "Type", { fg = "orange" })
 end

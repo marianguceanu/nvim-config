@@ -1,9 +1,12 @@
 require("snacks").setup(
+---@diagnostic disable-next-line: undefined-doc-name
 ---@type snacks.Config
 	{
 		explorer     = { enabled = false },
-		picker       = { enabled = false },
-		scroll       = { enabled = false },
+		statuscolumn = { enabled = false },
+		words        = { enabled = false },
+		scroll       = { enabled = true },
+		picker       = { enabled = true },
 		bigfile      = { enabled = true },
 		dashboard    = { enabled = true },
 		indent       = { enabled = true },
@@ -11,6 +14,4 @@ require("snacks").setup(
 		notifier     = { enabled = true },
 		quickfile    = { enabled = true },
 		scope        = { enabled = true },
-		statuscolumn = { enabled = true },
-		words        = { enabled = true },
 	})
