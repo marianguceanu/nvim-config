@@ -20,10 +20,10 @@ require("lualine").setup({
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { { "branch", icon = { " ", color = { fg = "pink" } } } },
-		lualine_c = { "filename" },
-		lualine_x = { "fileformat", "encoding" },
-		lualine_y = { "diagnostics", "diff", "location" },
+		lualine_b = { { "branch", icon = { " ", color = { fg = "pink" } } }, "diff" },
+		lualine_c = { "filename", "encoding" },
+		lualine_x = { "fileformat", },
+		lualine_y = { "diagnostics", "location" },
 		lualine_z = { "progress", "filetype" },
 	},
 	inactive_sections = {
